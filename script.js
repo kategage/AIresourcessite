@@ -224,6 +224,55 @@ const resources = [
 ];
 
 // ============================================================
+//  Claude Code + Resources
+//  Setup guides, workflow posts, and plugins
+// ============================================================
+
+const claudeCodeGuides = [
+  {
+    title: "Claude Code for Everything: Finally, that Personal Assistant You've Always Wanted",
+    series: "Part 1",
+    author: "Hannah Stulberg",
+    platform: "Substack",
+    format: "Setup guide",
+    description: "The go-to beginner's guide for installing and using Claude Code without a technical background. Covers IDE setup (Cursor, VS Code), CLI install, terminal basics, and the Document Skills plugin. Start here.",
+    tags: ["setup", "beginner", "Cursor", "no coding required", "free"],
+    url: "https://hannahstulberg.substack.com/p/claude-code-for-everything-finally",
+  },
+  {
+    title: "Claude Code for Everything: How the Guy Who Built It Actually Uses It",
+    series: "Part 2",
+    author: "Hannah Stulberg",
+    platform: "Substack",
+    format: "Workflow guide",
+    description: "How Claude Code's creator uses it day-to-day — advanced workflow patterns, session management, and approaches that work just as well for writing, research, and organizing as for coding.",
+    tags: ["workflow", "advanced", "sessions", "free"],
+    url: "https://hannahstulberg.substack.com/p/claude-code-for-everything-how-the",
+  },
+  {
+    title: "The Best Personal Assistant Remembers Things About You",
+    series: "Part 3",
+    author: "Hannah Stulberg",
+    platform: "Substack",
+    format: "Deep dive — CLAUDE.md",
+    description: "How to write CLAUDE.md files to give Claude persistent context about your org, your voice, your preferences, and workflows — so every session starts with the right foundations.",
+    tags: ["CLAUDE.md", "context", "personalization", "free"],
+    url: "https://hannahstulberg.substack.com/p/claude-code-for-everything-the-best-personal-assistant-remembers-everything-about-you",
+  },
+  {
+    title: "Obra Superpowers",
+    series: "Plugin",
+    author: "Jesse Vincent (obra)",
+    platform: "GitHub · Claude Marketplace",
+    format: "Claude Code plugin",
+    description: "Adds reusable skills to Claude Code — structured workflows for micro-task planning, test-driven development, automatic code review, and subagent dispatching. Free, open-source, and officially listed in Anthropic's Claude Code marketplace.",
+    tags: ["plugin", "free", "open source", "skills", "TDD"],
+    url: "https://github.com/obra/superpowers",
+    code: "/plugin marketplace add obra/superpowers-marketplace\n/plugin install superpowers@superpowers-marketplace",
+  },
+];
+
+// ============================================================
 //  AI Open Mics & Recorded Trainings
 //  Add new sessions here as they happen
 // ============================================================
@@ -295,6 +344,31 @@ const LABELS = {
   article:  "Article",
   org:      "Organization",
 };
+
+function createClaudeCodeCard(g) {
+  const card = document.createElement("article");
+  card.className = "cc-card";
+  const codeBlock = g.code
+    ? `<pre class="cc-code"><code>${g.code}</code></pre>`
+    : "";
+  card.innerHTML = `
+    <div class="cc-card-top">
+      <span class="cc-series-badge">${g.series}</span>
+      <span class="cc-platform">${g.platform}</span>
+    </div>
+    <h3 class="cc-title">${g.title}</h3>
+    <p class="cc-author">by ${g.author} · <em>${g.format}</em></p>
+    <p class="cc-desc">${g.description}</p>
+    ${codeBlock}
+    <div class="card-tags">
+      ${g.tags.map(t => `<span class="tag">${t}</span>`).join("")}
+    </div>
+    <a class="card-link cc-link" href="${g.url}" target="_blank" rel="noopener">
+      ${g.series === "Plugin" ? "View on GitHub" : "Read on Substack"}
+    </a>
+  `;
+  return card;
+}
 
 function createMicCard(m) {
   const card = document.createElement("article");
@@ -400,6 +474,12 @@ function applyFilters() {
 // ──────────────────────────────────────────────
 
 document.addEventListener("DOMContentLoaded", () => {
+
+  // ── Render Claude Code + guides ──
+  const ccGrid = document.getElementById("cc-grid");
+  if (ccGrid) {
+    claudeCodeGuides.forEach(g => ccGrid.appendChild(createClaudeCodeCard(g)));
+  }
 
   // ── Render upcoming events ──
   const eventList = document.getElementById("event-list");
