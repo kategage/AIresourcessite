@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Higher Ground — AI Resources for Progressive Organizations</title>
+  <title>Higher Ground Institute — AI Resources for Progressive Organizations</title>
   <meta name="description" content="A curated guide to AI trainings, tools, research, and organizations for campaigns, unions, nonprofits, and advocacy groups.">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -13,20 +13,20 @@
     <div class="container">
       <div class="header-inner">
         <div class="brand">
-          <span class="brand-name">Higher Ground</span>
+          <span class="brand-name">Higher Ground Institute</span>
           <span class="brand-tagline">AI resources for the movement</span>
         </div>
         <nav class="nav-links">
-          <a href="#events" class="nav-link nav-link-anchor">Events</a>
-          <a href="#open-mics" class="nav-link nav-link-anchor">Open Mics</a>
-          <a href="#claude-code" class="nav-link nav-link-anchor nav-link--highlight">Claude Code +</a>
-          <a href="#" data-filter="campaign-organizing" class="nav-link">Campaigns</a>
-          <a href="#" data-filter="workflow-automation" class="nav-link">Workflow</a>
-          <a href="#" data-filter="research-analytics" class="nav-link">Research</a>
-          <a href="#" data-filter="ethics-security" class="nav-link">Ethics &amp; Security</a>
-          <a href="#" data-filter="training-capacity" class="nav-link">Training</a>
-          <a href="#" data-filter="emerging-tech" class="nav-link">Emerging Tech</a>
-          <a href="#diy-workshop" class="nav-link nav-link-anchor">Run a Workshop</a>
+          <a href="#events"               class="nav-link">Events</a>
+          <a href="#open-mics"            class="nav-link">Open Mics</a>
+          <a href="#claude-code"          class="nav-link nav-link--highlight">Claude Code +</a>
+          <a href="#campaign-organizing"  class="nav-link">Campaigns</a>
+          <a href="#workflow-automation"  class="nav-link">Workflow</a>
+          <a href="#research-analytics"   class="nav-link">Research</a>
+          <a href="#ethics-security"      class="nav-link">Ethics &amp; Security</a>
+          <a href="#training-capacity"    class="nav-link">Training</a>
+          <a href="#emerging-tech"        class="nav-link">Emerging Tech</a>
+          <a href="#diy-workshop"         class="nav-link">Run a Workshop</a>
         </nav>
       </div>
     </div>
@@ -43,7 +43,7 @@
           <p class="hero-sub">Curated trainings, tools, research, and organizations for campaigns, unions, nonprofits, and advocacy groups navigating AI.</p>
           <div class="hero-meta">
             <div class="hero-stat">
-              <span class="hero-stat-num" id="stat-total">29</span>
+              <span class="hero-stat-num" id="stat-total">44</span>
               <span class="hero-stat-label">Resources</span>
             </div>
             <div class="hero-stat">
@@ -54,6 +54,16 @@
               <span class="hero-stat-num">Free</span>
               <span class="hero-stat-label">Always</span>
             </div>
+          </div>
+          <div class="hero-search">
+            <input
+              type="search"
+              id="search"
+              class="search-input"
+              placeholder="Search all resources…"
+              aria-label="Search resources"
+            >
+            <button class="btn-reset hidden" id="reset">Clear</button>
           </div>
         </div>
       </div>
@@ -69,6 +79,92 @@
         <div class="event-list" id="event-list">
           <!-- Injected by script.js -->
         </div>
+      </div>
+    </section>
+
+    <!-- ── TOPIC SECTIONS ────────────────────────── -->
+
+    <section class="topic-section topic-section--campaign" id="campaign-organizing">
+      <div class="container">
+        <div class="topic-header">
+          <span class="topic-eyebrow">🗳 Campaign &amp; Organizing</span>
+          <h2 class="topic-title">Campaign &amp; Organizing</h2>
+          <p class="topic-desc">AI tools and strategies for field ops, voter contact, canvassing, and social media organizing built for the campaign environment.</p>
+        </div>
+        <div class="resource-grid" id="topic-campaign-organizing">
+          <!-- Injected by script.js -->
+        </div>
+        <a class="topic-suggest" href="https://github.com/kategage/AIresourcessite/issues/new?title=Resource+suggestion:+Campaign+%26+Organizing" target="_blank" rel="noopener">+ Suggest a resource</a>
+      </div>
+    </section>
+
+    <section class="topic-section topic-section--workflow" id="workflow-automation">
+      <div class="container">
+        <div class="topic-header">
+          <span class="topic-eyebrow">⚙️ Workflow &amp; Automation</span>
+          <h2 class="topic-title">Workflow &amp; Automation</h2>
+          <p class="topic-desc">AI assistants, automation tools, and real-world case studies for internal org productivity, communications, and process design.</p>
+        </div>
+        <div class="resource-grid" id="topic-workflow-automation">
+          <!-- Injected by script.js -->
+        </div>
+        <a class="topic-suggest" href="https://github.com/kategage/AIresourcessite/issues/new?title=Resource+suggestion:+Workflow+%26+Automation" target="_blank" rel="noopener">+ Suggest a resource</a>
+      </div>
+    </section>
+
+    <section class="topic-section topic-section--research" id="research-analytics">
+      <div class="container">
+        <div class="topic-header">
+          <span class="topic-eyebrow">📊 Research &amp; Analytics</span>
+          <h2 class="topic-title">Research &amp; Analytics</h2>
+          <p class="topic-desc">Polling analysis, data modeling, social listening, and AI-assisted research tools for progressive organizations.</p>
+        </div>
+        <div class="resource-grid" id="topic-research-analytics">
+          <!-- Injected by script.js -->
+        </div>
+        <a class="topic-suggest" href="https://github.com/kategage/AIresourcessite/issues/new?title=Resource+suggestion:+Research+%26+Analytics" target="_blank" rel="noopener">+ Suggest a resource</a>
+      </div>
+    </section>
+
+    <section class="topic-section topic-section--ethics" id="ethics-security">
+      <div class="container">
+        <div class="topic-header">
+          <span class="topic-eyebrow">🔒 Ethics &amp; Security</span>
+          <h2 class="topic-title">Ethics &amp; Security</h2>
+          <p class="topic-desc">Responsible AI use, deepfake detection, algorithmic bias, civil liberties, and opsec resources for advocacy organizations.</p>
+        </div>
+        <div class="resource-grid" id="topic-ethics-security">
+          <!-- Injected by script.js -->
+        </div>
+        <a class="topic-suggest" href="https://github.com/kategage/AIresourcessite/issues/new?title=Resource+suggestion:+Ethics+%26+Security" target="_blank" rel="noopener">+ Suggest a resource</a>
+      </div>
+    </section>
+
+    <section class="topic-section topic-section--capacity" id="training-capacity">
+      <div class="container">
+        <div class="topic-header">
+          <span class="topic-eyebrow">📚 Training &amp; Capacity</span>
+          <h2 class="topic-title">Training &amp; Capacity</h2>
+          <p class="topic-desc">Staff upskilling, AI workplace policy templates, governance frameworks, and org readiness resources for nonprofits and campaigns.</p>
+        </div>
+        <div class="resource-grid" id="topic-training-capacity">
+          <!-- Injected by script.js -->
+        </div>
+        <a class="topic-suggest" href="https://github.com/kategage/AIresourcessite/issues/new?title=Resource+suggestion:+Training+%26+Capacity" target="_blank" rel="noopener">+ Suggest a resource</a>
+      </div>
+    </section>
+
+    <section class="topic-section topic-section--emerging" id="emerging-tech">
+      <div class="container">
+        <div class="topic-header">
+          <span class="topic-eyebrow">🚀 Emerging Tech</span>
+          <h2 class="topic-title">Emerging Tech</h2>
+          <p class="topic-desc">Agentic AI, open-source models, civic AI applications, and future capabilities — what's coming and what progressive orgs need to know.</p>
+        </div>
+        <div class="resource-grid" id="topic-emerging-tech">
+          <!-- Injected by script.js -->
+        </div>
+        <a class="topic-suggest" href="https://github.com/kategage/AIresourcessite/issues/new?title=Resource+suggestion:+Emerging+Tech" target="_blank" rel="noopener">+ Suggest a resource</a>
       </div>
     </section>
 
@@ -106,65 +202,16 @@
       </div>
     </section>
 
-    <!-- ── CONTENT MAP & GAPS ───────────────────── -->
-    <section class="content-map" id="content-map">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-eyebrow section-eyebrow--dark">From community feedback</span>
-          <h2 class="section-title section-title--dark">What we have — and what we still need</h2>
-          <p class="section-sub section-sub--dark">These six areas reflect what our community told us they want to learn about. We've mapped our current resources against them and flagged the gaps. <strong>Help us fill them.</strong></p>
-        </div>
-        <div class="gap-map-grid" id="gap-map-grid">
-          <!-- Injected by script.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- ── RESOURCE FILTER + GRID ────────────────── -->
-    <section class="filter-bar" id="resources">
-      <div class="container">
-        <div class="filter-bar-inner">
-          <input
-            type="search"
-            id="search"
-            class="search-input"
-            placeholder="Search resources…"
-            aria-label="Search resources"
-          >
-          <div class="pills" role="group" aria-label="Filter by topic">
-            <button class="pill active" data-filter="all">All</button>
-            <button class="pill pill-campaign"  data-filter="campaign-organizing">Campaign &amp; Organizing</button>
-            <button class="pill pill-workflow"  data-filter="workflow-automation">Workflow &amp; Automation</button>
-            <button class="pill pill-research"  data-filter="research-analytics">Research &amp; Analytics</button>
-            <button class="pill pill-ethics"    data-filter="ethics-security">Ethics &amp; Security</button>
-            <button class="pill pill-capacity"  data-filter="training-capacity">Training &amp; Capacity</button>
-            <button class="pill pill-emerging"  data-filter="emerging-tech">Emerging Tech</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="resources-section">
-      <div class="container">
-        <p class="result-count" id="result-count"></p>
-        <div class="resource-grid" id="resource-grid">
-          <!-- Cards injected by script.js -->
-        </div>
-        <p class="no-results hidden" id="no-results">No resources match your search. <button class="reset-link" id="reset">Clear filters</button></p>
-      </div>
-    </section>
-
     <!-- ── DIY WORKSHOP ──────────────────────────── -->
     <section class="diy-workshop" id="diy-workshop">
       <div class="container">
 
-        <div class="section-header section-header--light">
+        <div class="section-header">
           <span class="section-eyebrow section-eyebrow--dark">Build Internal Capacity</span>
           <h2 class="section-title section-title--dark">Run Your Own AI Workshop</h2>
           <p class="section-sub section-sub--dark">Building AI literacy at your org doesn't require a big budget or outside consultants. A well-run internal workshop demystifies the tools, surfaces your team's best ideas, and builds the champions you need to actually change how you work.</p>
         </div>
 
-        <!-- Format chooser -->
         <div class="workshop-formats">
           <div class="format-card">
             <span class="format-icon">☕</span>
@@ -189,50 +236,36 @@
           </div>
         </div>
 
-        <!-- Steps -->
         <div class="workshop-steps">
           <h3 class="steps-title">How to run it — 6 steps</h3>
           <ol class="steps-list">
             <li class="step">
               <span class="step-num">1</span>
-              <div class="step-body">
-                <strong>Define your goal.</strong> Are you building general literacy, discovering specific use cases, or getting team buy-in? Your goal shapes everything else.
-              </div>
+              <div class="step-body"><strong>Define your goal.</strong> Are you building general literacy, discovering specific use cases, or getting team buy-in? Your goal shapes everything else.</div>
             </li>
             <li class="step">
               <span class="step-num">2</span>
-              <div class="step-body">
-                <strong>Pick 2–3 tools to focus on.</strong> Don't try to cover the whole landscape. We recommend starting with one general assistant (Claude or ChatGPT) and one specialized tool relevant to your work.
-              </div>
+              <div class="step-body"><strong>Pick 2–3 tools to focus on.</strong> Don't try to cover the whole landscape. We recommend starting with one general assistant (Claude or ChatGPT) and one specialized tool relevant to your work.</div>
             </li>
             <li class="step">
               <span class="step-num">3</span>
-              <div class="step-body">
-                <strong>Design challenges from your real work.</strong> Skip generic demos. Use your actual fundraising emails, policy docs, talking points, or volunteer scripts as the raw material.
-              </div>
+              <div class="step-body"><strong>Design challenges from your real work.</strong> Skip generic demos. Use your actual fundraising emails, policy docs, talking points, or volunteer scripts as the raw material.</div>
             </li>
             <li class="step">
               <span class="step-num">4</span>
-              <div class="step-body">
-                <strong>Designate a facilitator.</strong> Someone who can demo, troubleshoot, and keep energy up. They don't need to be an AI expert — just comfortable enough to explore live.
-              </div>
+              <div class="step-body"><strong>Designate a facilitator.</strong> Someone who can demo, troubleshoot, and keep energy up. They don't need to be an AI expert — just comfortable enough to explore live.</div>
             </li>
             <li class="step">
               <span class="step-num">5</span>
-              <div class="step-body">
-                <strong>Document everything.</strong> Prompts that worked, outputs you're proud of, workflows worth repeating. A shared doc is fine. A Notion page is better.
-              </div>
+              <div class="step-body"><strong>Document everything.</strong> Prompts that worked, outputs you're proud of, workflows worth repeating. A shared doc is fine. A Notion page is better.</div>
             </li>
             <li class="step">
               <span class="step-num">6</span>
-              <div class="step-body">
-                <strong>Commit to one follow-up.</strong> Implement one thing within two weeks. Name it, own it, report back. This is how workshops become habits.
-              </div>
+              <div class="step-body"><strong>Commit to one follow-up.</strong> Implement one thing within two weeks. Name it, own it, report back. This is how workshops become habits.</div>
             </li>
           </ol>
         </div>
 
-        <!-- Starter prompts -->
         <div class="starter-prompts">
           <h3 class="prompts-title">Starter prompt ideas for your session</h3>
           <ul class="prompts-list">
@@ -243,7 +276,7 @@
             <li>"Write a volunteer recruitment script for someone at a [event type]."</li>
             <li>"Critique this press release. What's missing? What's unclear?"</li>
           </ul>
-          <p class="prompts-note">Browse more tools and trainings in the <a href="#resources">resource library above</a>, or check out our <a href="#open-mics">recorded Open Mics</a>.</p>
+          <p class="prompts-note">Browse more tools and trainings in the topic sections above, or check out our <a href="#open-mics">recorded Open Mics</a>.</p>
         </div>
 
       </div>
@@ -254,7 +287,8 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-inner">
-        <p>Higher Ground is a community resource for progressive organizers.</p>
+        <div class="footer-brand">Higher Ground Institute</div>
+        <p>A community resource for progressive organizers, campaigns, and advocacy organizations.</p>
         <p>
           Know something we're missing?
           <a href="https://github.com/kategage/AIresourcessite/issues/new" target="_blank" rel="noopener">Suggest a resource on GitHub</a>.

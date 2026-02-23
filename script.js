@@ -741,10 +741,7 @@ function createCard(r) {
   card.innerHTML = `
     <div class="card-top">
       <h2 class="card-title">${r.title}</h2>
-      <div class="card-badges">
-        <span class="badge badge-topic badge-${r.topic}">${TOPIC_LABELS[r.topic]}</span>
-        <span class="badge badge-type">${TYPE_LABELS[r.type]}</span>
-      </div>
+      <span class="badge-type badge-type-${r.type}">${TYPE_LABELS[r.type]}</span>
     </div>
     <p class="card-desc">${r.description}</p>
     <div class="card-tags">
@@ -757,32 +754,47 @@ function createCard(r) {
 }
 
 // ──────────────────────────────────────────────
-//  Filtering & search
+//  Search
 // ──────────────────────────────────────────────
 
-let activeFilter = "all";
-let searchQuery  = "";
+const TOPIC_ORDER = [
+  "campaign-organizing",
+  "workflow-automation",
+  "research-analytics",
+  "ethics-security",
+  "training-capacity",
+  "emerging-tech",
+];
 
-function applyFilters() {
-  const cards      = document.querySelectorAll(".card");
+let searchQuery = "";
+
+function applySearch() {
+  const cards = document.querySelectorAll(".card");
   let visibleCount = 0;
 
   cards.forEach(card => {
-    const categoryMatch = activeFilter === "all" || card.dataset.topic === activeFilter;
-    const searchMatch   = !searchQuery  || card.dataset.searchText.includes(searchQuery);
-    const visible       = categoryMatch && searchMatch;
-
+    const visible = !searchQuery || card.dataset.searchText.includes(searchQuery);
     card.style.display = visible ? "" : "none";
     if (visible) visibleCount++;
   });
 
-  const total = resources.length;
-  const countEl = document.getElementById("result-count");
-  countEl.textContent = visibleCount === total
-    ? `${total} resources`
-    : `${visibleCount} of ${total} resources`;
+  // Show/hide empty-section notices
+  TOPIC_ORDER.forEach(topic => {
+    const section = document.getElementById(topic);
+    if (!section) return;
+    const notice = section.querySelector(".topic-no-results");
+    if (!notice) return;
+    const anyVisible = Array.from(section.querySelectorAll(".card"))
+      .some(c => c.style.display !== "none");
+    notice.style.display = (searchQuery && !anyVisible) ? "block" : "none";
+  });
 
-  document.getElementById("no-results").classList.toggle("hidden", visibleCount > 0);
+  // Update stat & reset button
+  const statEl = document.getElementById("stat-total");
+  if (statEl) statEl.textContent = searchQuery ? visibleCount : resources.length;
+
+  const resetBtn = document.getElementById("reset");
+  if (resetBtn) resetBtn.classList.toggle("hidden", !searchQuery);
 }
 
 // ──────────────────────────────────────────────
@@ -791,8 +803,28 @@ function applyFilters() {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  // ── Render gap map ──
-  renderGapMap();
+  // ── Render resources into per-topic grids ──
+  TOPIC_ORDER.forEach(topic => {
+    const container = document.getElementById(`topic-${topic}`);
+    if (!container) return;
+
+    const topicResources = resources.filter(r => r.topic === topic);
+    topicResources.forEach(r => container.appendChild(createCard(r)));
+
+    // Add a hidden "no results" notice inside the grid
+    const notice = document.createElement("p");
+    notice.className = "topic-no-results";
+    notice.style.display = "none";
+    notice.style.color = "#888";
+    notice.style.fontSize = "0.9rem";
+    notice.style.padding = "1rem 0";
+    notice.textContent = "No resources match your search in this section.";
+    container.after(notice);
+  });
+
+  // ── Set stat total ──
+  const statEl = document.getElementById("stat-total");
+  if (statEl) statEl.textContent = resources.length;
 
   // ── Render Claude Code + guides ──
   const ccGrid = document.getElementById("cc-grid");
@@ -816,56 +848,22 @@ document.addEventListener("DOMContentLoaded", () => {
     openMics.forEach(m => micGrid.appendChild(createMicCard(m)));
   }
 
-  // ── Render resource cards ──
-  const grid = document.getElementById("resource-grid");
-
-  // Render all cards
-  resources.forEach(r => grid.appendChild(createCard(r)));
-
-  // Set initial counts
-  const total = resources.length;
-  document.getElementById("result-count").textContent = `${total} resources`;
-  const statEl = document.getElementById("stat-total");
-  if (statEl) statEl.textContent = total;
-
-  // Pill filters
-  document.querySelectorAll(".pill").forEach(pill => {
-    pill.addEventListener("click", () => {
-      document.querySelectorAll(".pill").forEach(p => p.classList.remove("active"));
-      pill.classList.add("active");
-      activeFilter = pill.dataset.filter;
-      applyFilters();
+  // ── Search input ──
+  const searchEl = document.getElementById("search");
+  if (searchEl) {
+    searchEl.addEventListener("input", e => {
+      searchQuery = e.target.value.trim().toLowerCase();
+      applySearch();
     });
-  });
+  }
 
-  // Nav link filters (header)
-  document.querySelectorAll(".nav-link[data-filter]").forEach(link => {
-    link.addEventListener("click", e => {
-      e.preventDefault();
-      // Sync pill state
-      document.querySelectorAll(".pill").forEach(p => {
-        p.classList.toggle("active", p.dataset.filter === link.dataset.filter);
-      });
-      activeFilter = link.dataset.filter;
-      applyFilters();
-      document.querySelector(".filter-bar").scrollIntoView({ behavior: "smooth", block: "start" });
+  // ── Reset button ──
+  const resetBtn = document.getElementById("reset");
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      searchQuery = "";
+      if (searchEl) searchEl.value = "";
+      applySearch();
     });
-  });
-
-  // Search
-  document.getElementById("search").addEventListener("input", e => {
-    searchQuery = e.target.value.trim().toLowerCase();
-    applyFilters();
-  });
-
-  // Reset
-  document.getElementById("reset").addEventListener("click", () => {
-    searchQuery  = "";
-    activeFilter = "all";
-    document.getElementById("search").value = "";
-    document.querySelectorAll(".pill").forEach(p => {
-      p.classList.toggle("active", p.dataset.filter === "all");
-    });
-    applyFilters();
-  });
+  }
 });
