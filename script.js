@@ -65,6 +65,30 @@ const resources = [
     tags: ["volunteers", "campaigns", "digital capacity", "Democrats"],
     url: "https://www.techforcampaigns.org",
   },
+  {
+    title: "Power, Not Panic: Why Organizers Must Engage with AI",
+    topic: "campaign-organizing",
+    type: "article",
+    description: "Essential reading for progressive organizers. Lee Anderson and Oluwakemi Oso argue that disengaging from AI is a surrender — and that organizers and funders must actively shape AI's future before billionaires and autocrats do. Rooted in Afrofuturism and movement strategy.",
+    tags: ["organizers", "strategy", "movement", "must-read", "Afrofuturism"],
+    url: "https://forgeorganizing.org/article/power-not-panic-why-organizers-must-engage-with-ai-to-build-the-future-we-deserve/",
+  },
+  {
+    title: "Higher Ground Labs — AI Political Tech Landscape Report",
+    topic: "campaign-organizing",
+    type: "article",
+    description: "Higher Ground Labs' AI-edition of their annual Political Tech Landscape Report, mapping use cases, vetted vendors, opportunities, and gaps in AI for Democratic campaigns and progressive organizations.",
+    tags: ["campaigns", "landscape", "vendors", "political tech"],
+    url: "https://highergroundlabs.com/ai-landscape-report/",
+  },
+  {
+    title: "Generative AI on Campaigns (2025 Whitepaper)",
+    topic: "campaign-organizing",
+    type: "article",
+    description: "September 2025 research paper by Jack Welty and Meg Schwenzfeier — former analytics leaders on Harris for President — on practical AI applications and the strategic implications of generative AI for Democratic campaigns.",
+    tags: ["campaigns", "analytics", "research", "2025", "Harris"],
+    url: "https://megschwenzfeier.com/files/AI_Whitepaper_2025.pdf",
+  },
 
   // ── WORKFLOW & AUTOMATION ───────────────────────────────────
   //    Internal tools, process automation, productivity
@@ -100,6 +124,14 @@ const resources = [
     description: "Design platform with integrated AI tools for generating graphics, social content, presentations, and campaign materials. Free tier available for nonprofits and campaigns.",
     tags: ["design", "social media", "visuals", "free tier"],
     url: "https://www.canva.com",
+  },
+  {
+    title: "How MoveOn Used AI: A Case Study",
+    topic: "workflow-automation",
+    type: "article",
+    description: "Cooperative Impact Lab's in-depth case study of how MoveOn implemented AI across their organizing and communications workflows — with honest lessons about what worked, what didn't, and what large progressive orgs should consider before scaling.",
+    tags: ["case study", "MoveOn", "comms", "automation", "lessons learned"],
+    url: "https://medium.com/the-cooperative-impact-lab/aicasestudy-moveon-74774ccfa947",
   },
 
   // ── RESEARCH & ANALYTICS ────────────────────────────────────
@@ -253,6 +285,38 @@ const resources = [
     tags: ["free", "equity", "AI literacy", "curriculum"],
     url: "https://ai-4-all.org",
   },
+  {
+    title: "Access Now",
+    topic: "ethics-security",
+    type: "org",
+    description: "International digital rights organization defending civil liberties in the digital age. Active on AI surveillance policy, facial recognition regulation, and holding platforms and governments accountable for algorithmic harm.",
+    tags: ["digital rights", "surveillance", "facial recognition", "civil liberties"],
+    url: "https://www.accessnow.org",
+  },
+  {
+    title: "DeepTrust Alliance",
+    topic: "ethics-security",
+    type: "org",
+    description: "The leading global nonprofit coalition establishing industry standards and policy to combat deepfakes and digital disinformation. Multi-stakeholder, multi-industry network — essential resource for orgs navigating AI-generated media threats.",
+    tags: ["deepfakes", "disinformation", "standards", "media integrity"],
+    url: "https://www.deeptrustalliance.org",
+  },
+  {
+    title: "Berkman Klein Center for Internet & Society",
+    topic: "ethics-security",
+    type: "org",
+    description: "Harvard's interdisciplinary research center at the intersection of law, technology, and society. Produces widely cited AI governance, policy, and democracy research — a credible source for briefings and advocacy work.",
+    tags: ["Harvard", "research", "governance", "law", "policy"],
+    url: "https://cyber.harvard.edu",
+  },
+  {
+    title: "AI and Democracy: Mapping the Intersections (Carnegie Endowment)",
+    topic: "ethics-security",
+    type: "article",
+    description: "Carnegie Endowment research mapping four key intersections of AI and democratic systems: elections and campaigns, citizen deliberation, government services, and social cohesion. Covers both risks (deepfakes, surveillance, misinformation) and opportunities.",
+    tags: ["democracy", "elections", "surveillance", "Carnegie", "research"],
+    url: "https://carnegieendowment.org/research/2026/01/ai-and-democracy-mapping-the-intersections",
+  },
 
   // ── TRAINING & CAPACITY ─────────────────────────────────────
   //    Upskilling teams, AI governance, workplace policy, org readiness
@@ -265,10 +329,66 @@ const resources = [
     tags: ["grassroots", "tech assistance", "nonprofits", "governance"],
     url: "https://www.progressivetech.org",
   },
+  {
+    title: "NTEN AI Policy Template",
+    topic: "training-capacity",
+    type: "article",
+    description: "Free, customizable AI workplace policy template from NTEN and ANB Advisory — a ready-to-use starting point for nonprofits and advocacy orgs building their first AI governance policy. Download, edit, and adapt for your organization.",
+    tags: ["policy template", "governance", "free", "NTEN", "workplace"],
+    url: "https://word.nten.org/wp-content/uploads/2024/08/AI-Policy-Template-by-ANB-Advisory.pdf",
+  },
+  {
+    title: "Microsoft AI Usage Policy Template (via TechSoup)",
+    topic: "training-capacity",
+    type: "article",
+    description: "Free AI usage policy template from Microsoft, distributed through TechSoup for nonprofits. Covers acceptable use, data handling, and staff responsibilities — a solid complement to NTEN's template for building out your org's AI governance.",
+    tags: ["policy template", "governance", "free", "TechSoup", "Microsoft"],
+    url: "https://page.techsoup.org/hubfs/Downloads/AI-Usage-Policy.pdf",
+  },
+  {
+    title: "NTEN: AI for Nonprofits Resource Hub",
+    topic: "training-capacity",
+    type: "org",
+    description: "NTEN's comprehensive hub for AI adoption in the nonprofit sector — bringing together policy templates, governance frameworks, courses, practitioner guides, and community resources for responsible AI implementation.",
+    tags: ["NTEN", "hub", "nonprofits", "governance", "training"],
+    url: "https://www.nten.org/learn/resource-hubs/artificial-intelligence",
+  },
+  {
+    title: "Claude for Nonprofits (Anthropic)",
+    topic: "training-capacity",
+    type: "article",
+    description: "Anthropic's program for nonprofit organizations: up to 75% off Claude's Team and Enterprise plans, integrations with Blackbaud and Candid, and a free AI education course for staff. Worth knowing about for orgs evaluating AI tools.",
+    tags: ["Anthropic", "Claude", "discount", "nonprofits", "education"],
+    url: "https://www.anthropic.com/news/claude-for-nonprofits",
+  },
 
   // ── EMERGING TECH ────────────────────────────────────────────
   //    Agentic AI, civic AI, open source models, future capabilities
-  //    ⚠️  THIS SECTION IS EMPTY — see Content Map below for what's needed
+
+  {
+    title: "Campaigns Are Knowledge Workers and the Tools Just Caught Up",
+    topic: "emerging-tech",
+    type: "article",
+    description: "Matt Hodges on how agentic AI tools can transform campaign operations by automating repetitive knowledge work — communications, fundraising, research, field. Includes clear-eyed analysis of equity gaps and governance risks for under-resourced campaigns.",
+    tags: ["agentic AI", "campaigns", "knowledge work", "equity", "governance"],
+    url: "https://matthodges.com/posts/2026-01-07-ai-agents-campaigns/",
+  },
+  {
+    title: "Last Week in AI",
+    topic: "emerging-tech",
+    type: "article",
+    description: "The most widely read weekly digest of AI news — curated, concise, and reliable. 130K+ subscribers. Good for staying current without spending all day tracking the space. Available as newsletter and podcast.",
+    tags: ["newsletter", "news", "weekly", "free", "podcast"],
+    url: "https://lastweekin.ai/",
+  },
+  {
+    title: "AI for Good Foundation",
+    topic: "emerging-tech",
+    type: "org",
+    description: "Global foundation working to align AI development with human values and social impact. Publishes resources, a monthly newsletter, and convenes projects at the intersection of AI and global challenges.",
+    tags: ["social impact", "values", "newsletter", "global"],
+    url: "https://ai4good.org/",
+  },
 
 ];
 
@@ -335,10 +455,9 @@ const gapMap = [
     topic:       "training-capacity",
     icon:        "📚",
     label:       "Training & Capacity",
-    severity:    "critical",
-    note:        "Only one resource in this category. Community named upskilling and governance as a top priority.",
+    severity:    "moderate",
+    note:        "Now includes policy templates, the NTEN hub, and the Claude for Nonprofits program — but still missing staff curricula with progressive-org context and internal champions guides.",
     lookingFor: [
-      "AI workplace policy templates for nonprofits and campaigns",
       "Staff upskilling curricula with progressive-org context",
       "AI governance frameworks adapted for advocacy organizations",
       "Board/leadership briefings on AI adoption decisions",
@@ -349,8 +468,8 @@ const gapMap = [
     topic:       "emerging-tech",
     icon:        "🚀",
     label:       "Emerging Tech",
-    severity:    "critical",
-    note:        "Zero resources despite being explicitly named in community feedback. Agentic AI and civic AI are top asks.",
+    severity:    "thin",
+    note:        "Now has foundational resources on agentic AI and AI news, but civic AI applications, open-source models, and progressive tech project coverage are still missing.",
     lookingFor: [
       "Beginner guide to agentic AI for non-technical org staff",
       "Open source LLM options for data-sovereignty-conscious orgs",
@@ -407,6 +526,16 @@ const claudeCodeGuides = [
     tags: ["plugin", "free", "open source", "skills", "TDD"],
     url: "https://github.com/obra/superpowers",
     code: "/plugin marketplace add obra/superpowers-marketplace\n/plugin install superpowers@superpowers-marketplace",
+  },
+  {
+    title: "Vibe Code Your Own Chief of Staff with Claude Code",
+    series: "Course",
+    author: "Benjamin Jackson",
+    platform: "Maven",
+    format: "Online course",
+    description: "Hands-on course for building a custom AI chief of staff using Claude Code — covers task and inbox capture, priority triage, weekly planning automation, calendar time-blocking, slash command creation, and integrations with Asana, Notion, and Slack. Leave with a working productivity system.",
+    tags: ["course", "productivity", "chief of staff", "automation", "workflow"],
+    url: "https://maven.com/benjaminjackson/vibe-code-your-own-chief-of-staff-with-claude-code",
   },
 ];
 
