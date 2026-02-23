@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Higher Ground — AI Resources for Progressive Organizations</title>
+  <meta name="description" content="A curated guide to AI trainings, tools, research, and organizations for campaigns, unions, nonprofits, and advocacy groups.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="brand">
+          <span class="brand-name">Higher Ground</span>
+          <span class="brand-tagline">AI resources for the movement</span>
+        </div>
+        <nav class="nav-links">
+          <a href="#events" class="nav-link nav-link-anchor">Events</a>
+          <a href="#open-mics" class="nav-link nav-link-anchor">Open Mics</a>
+          <a href="#" data-filter="training" class="nav-link">Trainings</a>
+          <a href="#" data-filter="tool" class="nav-link">Tools</a>
+          <a href="#" data-filter="article" class="nav-link">Articles</a>
+          <a href="#" data-filter="org" class="nav-link">Organizations</a>
+          <a href="#diy-workshop" class="nav-link nav-link-anchor">Run a Workshop</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── HERO ──────────────────────────────────── -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <span class="hero-eyebrow">Higher Ground Institute</span>
+          <h1>AI Resources for <span class="accent">Progressive Organizations</span></h1>
+          <p class="hero-sub">Curated trainings, tools, research, and organizations for campaigns, unions, nonprofits, and advocacy groups navigating AI.</p>
+          <div class="hero-meta">
+            <div class="hero-stat">
+              <span class="hero-stat-num" id="stat-total">29</span>
+              <span class="hero-stat-label">Resources</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-num">4</span>
+              <span class="hero-stat-label">Categories</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-num">Free</span>
+              <span class="hero-stat-label">Always</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── UPCOMING EVENTS ───────────────────────── -->
+    <section class="upcoming-events" id="events">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">What's Next</span>
+          <h2 class="section-title">Upcoming Events</h2>
+        </div>
+        <div class="event-list" id="event-list">
+          <!-- Injected by script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ── AI OPEN MICS ──────────────────────────── -->
+    <section class="open-mics" id="open-mics">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Past Sessions</span>
+          <h2 class="section-title">AI Open Mics &amp; Recorded Trainings</h2>
+          <p class="section-sub">Workshops, courses, and sessions from Higher Ground and our partners — available on demand.</p>
+        </div>
+        <div class="mic-grid" id="mic-grid">
+          <!-- Injected by script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ── RESOURCE FILTER + GRID ────────────────── -->
+    <section class="filter-bar" id="resources">
+      <div class="container">
+        <div class="filter-bar-inner">
+          <input
+            type="search"
+            id="search"
+            class="search-input"
+            placeholder="Search resources…"
+            aria-label="Search resources"
+          >
+          <div class="pills" role="group" aria-label="Filter by category">
+            <button class="pill active" data-filter="all">All</button>
+            <button class="pill pill-training" data-filter="training">Trainings</button>
+            <button class="pill pill-tool" data-filter="tool">Tools</button>
+            <button class="pill pill-article" data-filter="article">Articles &amp; Guides</button>
+            <button class="pill pill-org" data-filter="org">Organizations</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="resources-section">
+      <div class="container">
+        <p class="result-count" id="result-count"></p>
+        <div class="resource-grid" id="resource-grid">
+          <!-- Cards injected by script.js -->
+        </div>
+        <p class="no-results hidden" id="no-results">No resources match your search. <button class="reset-link" id="reset">Clear filters</button></p>
+      </div>
+    </section>
+
+    <!-- ── DIY WORKSHOP ──────────────────────────── -->
+    <section class="diy-workshop" id="diy-workshop">
+      <div class="container">
+
+        <div class="section-header section-header--light">
+          <span class="section-eyebrow section-eyebrow--dark">Build Internal Capacity</span>
+          <h2 class="section-title section-title--dark">Run Your Own AI Workshop</h2>
+          <p class="section-sub section-sub--dark">Building AI literacy at your org doesn't require a big budget or outside consultants. A well-run internal workshop demystifies the tools, surfaces your team's best ideas, and builds the champions you need to actually change how you work.</p>
+        </div>
+
+        <!-- Format chooser -->
+        <div class="workshop-formats">
+          <div class="format-card">
+            <span class="format-icon">☕</span>
+            <h3 class="format-title">Lunch &amp; Learn</h3>
+            <p class="format-duration">1–2 hours · 10–30 people</p>
+            <p class="format-desc">Low-barrier intro. One facilitator demos 2–3 tools on real examples from your work. Q&amp;A throughout. Minimal prep, maximum curiosity.</p>
+            <p class="format-ideal"><strong>Best for:</strong> First-time exposure, leadership buy-in, all-staff intros.</p>
+          </div>
+          <div class="format-card">
+            <span class="format-icon">🛠</span>
+            <h3 class="format-title">Half-Day Workshop</h3>
+            <p class="format-duration">3–4 hours · 8–20 people</p>
+            <p class="format-desc">Small teams tackle real use cases from your work — drafting comms, summarizing reports, building scripts. Debrief together at the end.</p>
+            <p class="format-ideal"><strong>Best for:</strong> Staff teams, comms departments, organizer cohorts.</p>
+          </div>
+          <div class="format-card format-card--featured">
+            <span class="format-icon">⚡</span>
+            <h3 class="format-title">AI Hackathon</h3>
+            <p class="format-duration">6–8 hours · 15–50 people</p>
+            <p class="format-desc">Teams compete to build AI-powered workflows, tools, or campaigns in a single day. Present and vote at the end. High energy, lasting results.</p>
+            <p class="format-ideal"><strong>Best for:</strong> Cross-functional teams, digital staff, orgs ready to go deep.</p>
+          </div>
+        </div>
+
+        <!-- Steps -->
+        <div class="workshop-steps">
+          <h3 class="steps-title">How to run it — 6 steps</h3>
+          <ol class="steps-list">
+            <li class="step">
+              <span class="step-num">1</span>
+              <div class="step-body">
+                <strong>Define your goal.</strong> Are you building general literacy, discovering specific use cases, or getting team buy-in? Your goal shapes everything else.
+              </div>
+            </li>
+            <li class="step">
+              <span class="step-num">2</span>
+              <div class="step-body">
+                <strong>Pick 2–3 tools to focus on.</strong> Don't try to cover the whole landscape. We recommend starting with one general assistant (Claude or ChatGPT) and one specialized tool relevant to your work.
+              </div>
+            </li>
+            <li class="step">
+              <span class="step-num">3</span>
+              <div class="step-body">
+                <strong>Design challenges from your real work.</strong> Skip generic demos. Use your actual fundraising emails, policy docs, talking points, or volunteer scripts as the raw material.
+              </div>
+            </li>
+            <li class="step">
+              <span class="step-num">4</span>
+              <div class="step-body">
+                <strong>Designate a facilitator.</strong> Someone who can demo, troubleshoot, and keep energy up. They don't need to be an AI expert — just comfortable enough to explore live.
+              </div>
+            </li>
+            <li class="step">
+              <span class="step-num">5</span>
+              <div class="step-body">
+                <strong>Document everything.</strong> Prompts that worked, outputs you're proud of, workflows worth repeating. A shared doc is fine. A Notion page is better.
+              </div>
+            </li>
+            <li class="step">
+              <span class="step-num">6</span>
+              <div class="step-body">
+                <strong>Commit to one follow-up.</strong> Implement one thing within two weeks. Name it, own it, report back. This is how workshops become habits.
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Starter prompts -->
+        <div class="starter-prompts">
+          <h3 class="prompts-title">Starter prompt ideas for your session</h3>
+          <ul class="prompts-list">
+            <li>"Draft a fundraising email in [org name]'s voice about [current campaign]."</li>
+            <li>"Summarize this policy report in 5 bullet points for a non-expert audience."</li>
+            <li>"Write 5 subject line options for this email. Optimize for open rate."</li>
+            <li>"Turn these talking points into a FAQ for our website."</li>
+            <li>"Write a volunteer recruitment script for someone at a [event type]."</li>
+            <li>"Critique this press release. What's missing? What's unclear?"</li>
+          </ul>
+          <p class="prompts-note">Browse more tools and trainings in the <a href="#resources">resource library above</a>, or check out our <a href="#open-mics">recorded Open Mics</a>.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p>Higher Ground is a community resource for progressive organizers.</p>
+        <p>
+          Know something we're missing?
+          <a href="https://github.com/kategage/AIresourcessite/issues/new" target="_blank" rel="noopener">Suggest a resource on GitHub</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
