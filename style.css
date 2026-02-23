@@ -855,6 +855,183 @@ a:hover { text-decoration: underline; }
 
 .prompts-note a { color: var(--cyan); font-weight: 500; }
 
+/* ─── TOPIC CATEGORY COLORS (new 6-topic system) ─ */
+:root {
+  --campaign-bg:  #e8f6fd; --campaign-fg:  #0571b5;
+  --workflow-bg:  #e6f9f0; --workflow-fg:  #1a7a4a;
+  --research-bg:  #fff4e0; --research-fg:  #a65e00;
+  --ethics-bg:    #fce8f0; --ethics-fg:    #b81060;
+  --capacity-bg:  #f3e8ff; --capacity-fg:  #6b21a8;
+  --emerging-bg:  #f0f0f0; --emerging-fg:  #222222;
+
+  /* severity colors for gap map */
+  --sev-well:     #1a7a4a;
+  --sev-moderate: #a65e00;
+  --sev-thin:     #c05a00;
+  --sev-critical: #c0392b;
+}
+
+/* ─── TOPIC BADGES (primary, on cards) ───────────── */
+.badge-topic {
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 0.2rem 0.55rem;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.badge-campaign-organizing { background: var(--campaign-bg); color: var(--campaign-fg); }
+.badge-workflow-automation  { background: var(--workflow-bg); color: var(--workflow-fg); }
+.badge-research-analytics   { background: var(--research-bg); color: var(--research-fg); }
+.badge-ethics-security      { background: var(--ethics-bg);   color: var(--ethics-fg); }
+.badge-training-capacity    { background: var(--capacity-bg); color: var(--capacity-fg); }
+.badge-emerging-tech        { background: var(--emerging-bg); color: var(--emerging-fg); }
+
+/* ─── TYPE BADGE (secondary, small) ─────────────── */
+.badge-type {
+  font-size: 0.6rem;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 0.15rem 0.45rem;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-muted);
+}
+
+.card-badges {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+  flex-shrink: 0;
+}
+
+/* ─── TOPIC FILTER PILLS (new colors) ───────────── */
+.pill-campaign.active  { background: var(--campaign-fg); border-color: var(--campaign-fg); }
+.pill-workflow.active  { background: var(--workflow-fg); border-color: var(--workflow-fg); }
+.pill-research.active  { background: var(--research-fg); border-color: var(--research-fg); }
+.pill-ethics.active    { background: var(--ethics-fg);   border-color: var(--ethics-fg); }
+.pill-capacity.active  { background: var(--capacity-fg); border-color: var(--capacity-fg); }
+.pill-emerging.active  { background: var(--emerging-fg); border-color: var(--emerging-fg); }
+
+/* ─── CONTENT MAP & GAPS ─────────────────────────── */
+.content-map {
+  background: var(--color-surface);
+  padding: 3.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.gap-map-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 1.25rem;
+}
+
+.gap-card {
+  background: var(--white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.3rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  box-shadow: var(--shadow);
+  border-top: 4px solid var(--color-border);
+}
+
+/* Severity-based top border */
+.gap-card--well-covered { border-top-color: var(--sev-well); }
+.gap-card--moderate     { border-top-color: var(--sev-moderate); }
+.gap-card--thin         { border-top-color: var(--sev-thin); }
+.gap-card--critical     { border-top-color: var(--sev-critical); }
+
+.gap-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.gap-icon { font-size: 1.3rem; flex-shrink: 0; }
+
+.gap-title-block { flex: 1; min-width: 0; }
+
+.gap-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.gap-count {
+  font-size: 0.72rem;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+.gap-severity {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  border-radius: 4px;
+  padding: 0.2rem 0.55rem;
+  white-space: nowrap;
+}
+
+.gap-severity--well-covered { background: #dcfce7; color: var(--sev-well); }
+.gap-severity--moderate     { background: #fef3c7; color: var(--sev-moderate); }
+.gap-severity--thin         { background: #ffedd5; color: var(--sev-thin); }
+.gap-severity--critical     { background: #fee2e2; color: var(--sev-critical); }
+
+.gap-note {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  line-height: 1.55;
+  font-style: italic;
+}
+
+.gap-needs {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.gap-needs li {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  padding-left: 0.9rem;
+  position: relative;
+  line-height: 1.4;
+}
+
+.gap-needs li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: var(--color-border);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.gap-suggest {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--cyan);
+  display: inline-block;
+  margin-top: 0.25rem;
+}
+
+.gap-suggest:hover { color: var(--purple); text-decoration: none; }
+
 /* ─── NAV HIGHLIGHT ───────────────────────────── */
 .nav-link--highlight {
   color: var(--cyan) !important;
@@ -1009,6 +1186,8 @@ a:hover { text-decoration: underline; }
   .resource-grid { grid-template-columns: 1fr; }
   .mic-grid { grid-template-columns: 1fr; }
   .cc-grid { grid-template-columns: 1fr; }
+  .gap-map-grid { grid-template-columns: 1fr; }
   .workshop-formats { grid-template-columns: 1fr; }
   .starter-prompts { padding: 1.25rem; }
+  .card-badges { flex-direction: row; align-items: center; }
 }

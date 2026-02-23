@@ -20,10 +20,12 @@
           <a href="#events" class="nav-link nav-link-anchor">Events</a>
           <a href="#open-mics" class="nav-link nav-link-anchor">Open Mics</a>
           <a href="#claude-code" class="nav-link nav-link-anchor nav-link--highlight">Claude Code +</a>
-          <a href="#" data-filter="training" class="nav-link">Trainings</a>
-          <a href="#" data-filter="tool" class="nav-link">Tools</a>
-          <a href="#" data-filter="article" class="nav-link">Articles</a>
-          <a href="#" data-filter="org" class="nav-link">Organizations</a>
+          <a href="#" data-filter="campaign-organizing" class="nav-link">Campaigns</a>
+          <a href="#" data-filter="workflow-automation" class="nav-link">Workflow</a>
+          <a href="#" data-filter="research-analytics" class="nav-link">Research</a>
+          <a href="#" data-filter="ethics-security" class="nav-link">Ethics &amp; Security</a>
+          <a href="#" data-filter="training-capacity" class="nav-link">Training</a>
+          <a href="#" data-filter="emerging-tech" class="nav-link">Emerging Tech</a>
           <a href="#diy-workshop" class="nav-link nav-link-anchor">Run a Workshop</a>
         </nav>
       </div>
@@ -45,8 +47,8 @@
               <span class="hero-stat-label">Resources</span>
             </div>
             <div class="hero-stat">
-              <span class="hero-stat-num">4</span>
-              <span class="hero-stat-label">Categories</span>
+              <span class="hero-stat-num">6</span>
+              <span class="hero-stat-label">Topic Areas</span>
             </div>
             <div class="hero-stat">
               <span class="hero-stat-num">Free</span>
@@ -104,6 +106,20 @@
       </div>
     </section>
 
+    <!-- ── CONTENT MAP & GAPS ───────────────────── -->
+    <section class="content-map" id="content-map">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow section-eyebrow--dark">From community feedback</span>
+          <h2 class="section-title section-title--dark">What we have — and what we still need</h2>
+          <p class="section-sub section-sub--dark">These six areas reflect what our community told us they want to learn about. We've mapped our current resources against them and flagged the gaps. <strong>Help us fill them.</strong></p>
+        </div>
+        <div class="gap-map-grid" id="gap-map-grid">
+          <!-- Injected by script.js -->
+        </div>
+      </div>
+    </section>
+
     <!-- ── RESOURCE FILTER + GRID ────────────────── -->
     <section class="filter-bar" id="resources">
       <div class="container">
@@ -115,12 +131,14 @@
             placeholder="Search resources…"
             aria-label="Search resources"
           >
-          <div class="pills" role="group" aria-label="Filter by category">
+          <div class="pills" role="group" aria-label="Filter by topic">
             <button class="pill active" data-filter="all">All</button>
-            <button class="pill pill-training" data-filter="training">Trainings</button>
-            <button class="pill pill-tool" data-filter="tool">Tools</button>
-            <button class="pill pill-article" data-filter="article">Articles &amp; Guides</button>
-            <button class="pill pill-org" data-filter="org">Organizations</button>
+            <button class="pill pill-campaign"  data-filter="campaign-organizing">Campaign &amp; Organizing</button>
+            <button class="pill pill-workflow"  data-filter="workflow-automation">Workflow &amp; Automation</button>
+            <button class="pill pill-research"  data-filter="research-analytics">Research &amp; Analytics</button>
+            <button class="pill pill-ethics"    data-filter="ethics-security">Ethics &amp; Security</button>
+            <button class="pill pill-capacity"  data-filter="training-capacity">Training &amp; Capacity</button>
+            <button class="pill pill-emerging"  data-filter="emerging-tech">Emerging Tech</button>
           </div>
         </div>
       </div>

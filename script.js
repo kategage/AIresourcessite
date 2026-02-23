@@ -1,226 +1,364 @@
 // ============================================================
 //  Higher Ground — Resource data + filtering
-//  To add a resource: copy a block in the `resources` array
-//  and fill in the fields.
+//
+//  Each resource has:
+//    topic  — the primary use-case category (drives filters)
+//    type   — the format/format (tool / training / article / org)
+//
+//  Topic values:
+//    "campaign-organizing" | "workflow-automation" | "research-analytics"
+//    "ethics-security"     | "training-capacity"   | "emerging-tech"
+//
+//  To add a resource: copy any block below and fill in the fields.
 // ============================================================
 
 const resources = [
 
-  // ── TRAININGS ──────────────────────────────────────────────
+  // ── CAMPAIGN & ORGANIZING ───────────────────────────────────
+  //    Field ops, voter contact, canvassing, social media organizing
 
   {
-    title: "Tech for Campaigns",
-    category: "training",
-    description: "Free digital skills training for Democratic campaigns and progressive organizations, including hands-on workshops covering AI tools for communications, organizing, and voter contact.",
+    title: "Tech for Campaigns — Training",
+    topic: "campaign-organizing",
+    type: "training",
+    description: "Free digital skills training for Democratic campaigns and progressive organizations, covering AI tools for communications, organizing, and voter contact.",
     tags: ["campaigns", "digital skills", "workshops", "free"],
     url: "https://www.techforcampaigns.org",
   },
   {
     title: "Wellstone Action",
-    category: "training",
+    topic: "campaign-organizing",
+    type: "training",
     description: "Wellstone's Camp training programs equip progressive organizers and candidates with modern skills — including how to responsibly integrate AI into advocacy and field work.",
     tags: ["organizing", "candidates", "advocacy", "workshops"],
     url: "https://www.wellstone.org",
   },
   {
-    title: "Progressive Technology Project",
-    category: "training",
-    description: "Provides technical assistance and training to grassroots organizations, including guidance on adopting AI tools safely and effectively for organizing and communications.",
-    tags: ["grassroots", "tech assistance", "nonprofits"],
-    url: "https://www.progressivetech.org",
-  },
-  {
-    title: "AI4ALL Open Learning",
-    category: "training",
-    description: "Free AI education curriculum designed for people from underrepresented communities. Covers AI fundamentals, ethics, and practical applications — no technical background required.",
-    tags: ["free", "equity", "AI literacy", "curriculum"],
-    url: "https://ai-4-all.org",
-  },
-  {
-    title: "Mozilla AI Literacy",
-    category: "training",
-    description: "Mozilla Foundation's collection of guides and courses helping people understand how AI works, its risks, and how to engage critically with AI-powered systems.",
-    tags: ["AI literacy", "free", "guides", "ethics"],
-    url: "https://www.mozilla.org/en-US/ai/",
-  },
-  {
-    title: "New Organizing Institute (NOI) Archive",
-    category: "training",
-    description: "The influential training and research hub that shaped a generation of progressive digital organizers. Archived resources on data-driven organizing remain highly relevant.",
-    tags: ["data", "digital organizing", "archive"],
-    url: "https://neworganizing.com",
-  },
-
-  // ── TOOLS ──────────────────────────────────────────────────
-
-  {
-    title: "Claude (Anthropic)",
-    category: "tool",
-    description: "AI assistant well-suited for drafting communications, summarizing policy documents, generating talking points, analyzing data, and research. Strong safety and factual accuracy focus.",
-    tags: ["writing", "research", "analysis", "communications"],
-    url: "https://claude.ai",
-  },
-  {
-    title: "ChatGPT (OpenAI)",
-    category: "tool",
-    description: "Widely used AI assistant for drafting content, answering questions, brainstorming, and automating repetitive writing tasks. Available in free and paid tiers.",
-    tags: ["writing", "brainstorming", "automation", "free tier"],
-    url: "https://chatgpt.com",
-  },
-  {
-    title: "Perplexity AI",
-    category: "tool",
-    description: "AI-powered research assistant that searches the web and cites its sources — useful for rapid policy research, opposition research, and fact-checking with verifiable references.",
-    tags: ["research", "fact-checking", "citations", "policy"],
-    url: "https://www.perplexity.ai",
-  },
-  {
-    title: "Otter.ai",
-    category: "tool",
-    description: "Automated meeting transcription and notes. Useful for staff meetings, interviews, town halls, and trainings — generates searchable transcripts and AI-powered summaries.",
-    tags: ["transcription", "meetings", "notes", "accessibility"],
-    url: "https://otter.ai",
-  },
-  {
-    title: "Canva (Magic Studio)",
-    category: "tool",
-    description: "Design platform with integrated AI tools for generating graphics, social content, presentations, and campaign materials. Free tier available for nonprofits and campaigns.",
-    tags: ["design", "social media", "visuals", "free tier"],
-    url: "https://www.canva.com",
-  },
-  {
     title: "Action Network",
-    category: "tool",
+    topic: "campaign-organizing",
+    type: "tool",
     description: "Open-source organizing platform for progressive groups — email, petitions, events, donations. Increasingly integrates AI-assisted features for email and list management.",
     tags: ["organizing", "email", "petitions", "open source"],
     url: "https://actionnetwork.org",
   },
   {
     title: "Hustle",
-    category: "tool",
+    topic: "campaign-organizing",
+    type: "tool",
     description: "Peer-to-peer texting platform used by major campaigns and unions. AI features help with script suggestions and response routing at scale.",
     tags: ["texting", "voter contact", "P2P", "field"],
     url: "https://hustle.com",
   },
   {
+    title: "Impactive",
+    topic: "campaign-organizing",
+    type: "tool",
+    description: "Digital organizing platform combining relational organizing, P2P texting, and phone banking with data integrations — used by progressive campaigns and advocacy orgs.",
+    tags: ["relational organizing", "field", "voter contact", "campaigns"],
+    url: "https://www.impactive.io",
+  },
+  {
+    title: "Tech for Campaigns — Volunteer Matching",
+    topic: "campaign-organizing",
+    type: "org",
+    description: "Connects skilled tech and digital volunteers with Democratic campaigns and progressive causes. Builds digital capacity for organizations that can't afford in-house teams.",
+    tags: ["volunteers", "campaigns", "digital capacity", "Democrats"],
+    url: "https://www.techforcampaigns.org",
+  },
+
+  // ── WORKFLOW & AUTOMATION ───────────────────────────────────
+  //    Internal tools, process automation, productivity
+
+  {
+    title: "Claude (Anthropic)",
+    topic: "workflow-automation",
+    type: "tool",
+    description: "AI assistant well-suited for drafting communications, summarizing policy documents, generating talking points, analyzing data, and research. Strong safety and factual accuracy focus.",
+    tags: ["writing", "research", "analysis", "communications"],
+    url: "https://claude.ai",
+  },
+  {
+    title: "ChatGPT (OpenAI)",
+    topic: "workflow-automation",
+    type: "tool",
+    description: "Widely used AI assistant for drafting content, answering questions, brainstorming, and automating repetitive writing tasks. Available in free and paid tiers.",
+    tags: ["writing", "brainstorming", "automation", "free tier"],
+    url: "https://chatgpt.com",
+  },
+  {
+    title: "Otter.ai",
+    topic: "workflow-automation",
+    type: "tool",
+    description: "Automated meeting transcription and notes. Useful for staff meetings, interviews, town halls, and trainings — generates searchable transcripts and AI-powered summaries.",
+    tags: ["transcription", "meetings", "notes", "accessibility"],
+    url: "https://otter.ai",
+  },
+  {
+    title: "Canva (Magic Studio)",
+    topic: "workflow-automation",
+    type: "tool",
+    description: "Design platform with integrated AI tools for generating graphics, social content, presentations, and campaign materials. Free tier available for nonprofits and campaigns.",
+    tags: ["design", "social media", "visuals", "free tier"],
+    url: "https://www.canva.com",
+  },
+
+  // ── RESEARCH & ANALYTICS ────────────────────────────────────
+  //    Polling, data analysis, social media analytics, audience modeling
+
+  {
+    title: "Perplexity AI",
+    topic: "research-analytics",
+    type: "tool",
+    description: "AI-powered research assistant that searches the web and cites its sources — useful for rapid policy research, opposition research, and fact-checking with verifiable references.",
+    tags: ["research", "fact-checking", "citations", "policy"],
+    url: "https://www.perplexity.ai",
+  },
+  {
     title: "Quorum",
-    category: "tool",
+    topic: "research-analytics",
+    type: "tool",
     description: "AI-powered government affairs platform for tracking legislation, monitoring regulatory activity, and managing stakeholder engagement across federal and state levels.",
     tags: ["policy tracking", "legislative", "lobbying", "advocacy"],
     url: "https://www.quorum.us",
   },
   {
-    title: "Impactive",
-    category: "tool",
-    description: "Digital organizing platform combining relational organizing, P2P texting, and phone banking with data integrations — used by progressive campaigns and advocacy orgs.",
-    tags: ["relational organizing", "field", "voter contact", "campaigns"],
-    url: "https://www.impactive.io",
+    title: "New Organizing Institute (NOI) Archive",
+    topic: "research-analytics",
+    type: "training",
+    description: "The influential training and research hub that shaped a generation of progressive digital organizers. Archived resources on data-driven organizing remain highly relevant.",
+    tags: ["data", "digital organizing", "archive"],
+    url: "https://neworganizing.com",
+  },
+  {
+    title: "Data for Progress",
+    topic: "research-analytics",
+    type: "org",
+    description: "Progressive think tank using advanced analytics and polling to support progressive campaigns, policies, and movement organizations. Active on AI policy research.",
+    tags: ["research", "polling", "campaigns", "think tank"],
+    url: "https://www.dataforprogress.org",
   },
 
-  // ── ARTICLES & GUIDES ──────────────────────────────────────
+  // ── ETHICS & SECURITY ───────────────────────────────────────
+  //    Responsible use, deepfakes, opsec, bias, labor/environmental ethics
 
   {
     title: "AI Now Institute — Annual Reports",
-    category: "article",
+    topic: "ethics-security",
+    type: "article",
     description: "The definitive annual assessment of AI's social impacts — covering labor, surveillance, discrimination, and regulation. Essential reading for advocacy staff and policymakers.",
     tags: ["policy", "labor", "surveillance", "annual report"],
     url: "https://ainowinstitute.org/reports",
   },
   {
     title: "EFF: Artificial Intelligence",
-    category: "article",
+    topic: "ethics-security",
+    type: "article",
     description: "The Electronic Frontier Foundation's ongoing coverage of AI and civil liberties — including surveillance, deepfakes, AI in policing, and legislative tracking.",
-    tags: ["civil liberties", "surveillance", "policing", "legislation"],
+    tags: ["civil liberties", "surveillance", "policing", "deepfakes"],
     url: "https://www.eff.org/issues/artificial-intelligence",
   },
   {
     title: "Brennan Center: AI & Democracy",
-    category: "article",
+    topic: "ethics-security",
+    type: "article",
     description: "Research and analysis on how AI affects democratic institutions — including election security, AI-generated disinformation, voter suppression tools, and regulation.",
     tags: ["elections", "democracy", "disinformation", "voting rights"],
     url: "https://www.brennancenter.org/issues/artificial-intelligence",
   },
   {
     title: "Algorithmic Justice League — Resources",
-    category: "article",
+    topic: "ethics-security",
+    type: "article",
     description: "Tools, guides, and research on algorithmic bias and AI accountability. Includes practical frameworks for evaluating AI tools and advocating for equitable AI.",
     tags: ["bias", "equity", "accountability", "race"],
     url: "https://www.ajl.org/resources",
   },
   {
     title: "Data & Society Research Institute",
-    category: "article",
+    topic: "ethics-security",
+    type: "article",
     description: "Independent research on the social and cultural implications of AI — labor, media, health, and education. Published reports are freely available.",
-    tags: ["research", "labor", "media", "health", "education"],
+    tags: ["research", "labor", "media", "health"],
     url: "https://datasociety.net",
   },
   {
     title: "Center for Democracy & Technology — AI",
-    category: "article",
+    topic: "ethics-security",
+    type: "article",
     description: "CDT's policy analysis and advocacy guides on AI in government, employment, and civil rights — with resources for advocates engaging in AI legislative processes.",
     tags: ["policy", "civil rights", "government", "legislation"],
     url: "https://cdt.org/area-of-focus/ai-governance/",
   },
   {
     title: "ACLU: Artificial Intelligence",
-    category: "article",
+    topic: "ethics-security",
+    type: "article",
     description: "The ACLU's coverage of AI and civil liberties — face recognition, predictive policing, AI in courts, and workers' rights. Includes policy primers and advocacy tools.",
     tags: ["civil liberties", "policing", "workers rights", "face recognition"],
     url: "https://www.aclu.org/ai",
   },
-
-  // ── ORGANIZATIONS ──────────────────────────────────────────
-
   {
     title: "AI Now Institute",
-    category: "org",
+    topic: "ethics-security",
+    type: "org",
     description: "Leading interdisciplinary research institute studying the social implications of AI. Housed at NYU, it produces influential policy research and advocates for AI accountability.",
     tags: ["research", "policy", "accountability", "NYU"],
     url: "https://ainowinstitute.org",
   },
   {
     title: "Algorithmic Justice League",
-    category: "org",
+    topic: "ethics-security",
+    type: "org",
     description: "Organization working to illuminate the harms and biases of AI systems — with particular focus on how facial recognition and predictive systems harm communities of color.",
     tags: ["bias", "face recognition", "race", "accountability"],
     url: "https://www.ajl.org",
   },
   {
-    title: "Data for Progress",
-    category: "org",
-    description: "Progressive think tank using advanced analytics and polling to support progressive campaigns, policies, and movement organizations. Active on AI policy research.",
-    tags: ["research", "polling", "campaigns", "think tank"],
-    url: "https://www.dataforprogress.org",
-  },
-  {
     title: "Encode Justice",
-    category: "org",
+    topic: "ethics-security",
+    type: "org",
     description: "Youth-led AI advocacy organization pushing for equitable and accountable AI policy. Organizes young people on AI issues at the federal and state level.",
     tags: ["youth", "advocacy", "policy", "federal"],
     url: "https://encodejustice.org",
   },
   {
     title: "Center for Democracy & Technology",
-    category: "org",
+    topic: "ethics-security",
+    type: "org",
     description: "Nonpartisan advocacy organization working to preserve civil rights and democratic values in digital policy — including a major focus on AI governance and civil rights.",
     tags: ["policy", "civil rights", "advocacy", "digital rights"],
     url: "https://cdt.org",
   },
   {
-    title: "Tech for Campaigns",
-    category: "org",
-    description: "Connects skilled tech and digital volunteers with Democratic campaigns and progressive causes. Builds digital capacity for organizations that can't afford in-house teams.",
-    tags: ["volunteers", "campaigns", "digital capacity", "Democrats"],
-    url: "https://www.techforcampaigns.org",
-  },
-  {
     title: "Partnership on AI",
-    category: "org",
+    topic: "ethics-security",
+    type: "org",
     description: "Multi-stakeholder nonprofit bringing together civil society, academia, and industry to address AI's impacts. Publishes resources on responsible AI for nonprofits and advocates.",
     tags: ["multi-stakeholder", "responsible AI", "civil society"],
     url: "https://partnershiponai.org",
   },
+  {
+    title: "Mozilla AI Literacy",
+    topic: "ethics-security",
+    type: "training",
+    description: "Mozilla Foundation's collection of guides and courses helping people understand how AI works, its risks, and how to engage critically with AI-powered systems.",
+    tags: ["AI literacy", "free", "guides", "ethics"],
+    url: "https://www.mozilla.org/en-US/ai/",
+  },
+  {
+    title: "AI4ALL Open Learning",
+    topic: "ethics-security",
+    type: "training",
+    description: "Free AI education curriculum designed for people from underrepresented communities. Covers AI fundamentals, ethics, and practical applications — no technical background required.",
+    tags: ["free", "equity", "AI literacy", "curriculum"],
+    url: "https://ai-4-all.org",
+  },
 
+  // ── TRAINING & CAPACITY ─────────────────────────────────────
+  //    Upskilling teams, AI governance, workplace policy, org readiness
+
+  {
+    title: "Progressive Technology Project",
+    topic: "training-capacity",
+    type: "training",
+    description: "Provides technical assistance and training to grassroots organizations, including guidance on adopting AI tools safely and effectively for organizing and communications.",
+    tags: ["grassroots", "tech assistance", "nonprofits", "governance"],
+    url: "https://www.progressivetech.org",
+  },
+
+  // ── EMERGING TECH ────────────────────────────────────────────
+  //    Agentic AI, civic AI, open source models, future capabilities
+  //    ⚠️  THIS SECTION IS EMPTY — see Content Map below for what's needed
+
+];
+
+// ============================================================
+//  Content Map & Gap Analysis
+//  Drives the "What we have / What we need" section
+//  severity: "well-covered" | "moderate" | "thin" | "critical"
+// ============================================================
+
+const gapMap = [
+  {
+    topic:       "campaign-organizing",
+    icon:        "🗳",
+    label:       "Campaign & Organizing",
+    severity:    "moderate",
+    note:        "Good platform tools, but thin on AI-specific field guides and social organizing tactics.",
+    lookingFor: [
+      "Guides on AI for canvassing script optimization",
+      "Social media organizing with AI (not just design tools)",
+      "AI-assisted relational organizing case studies from real campaigns",
+      "AI for voter contact ethics: consent, targeting concerns",
+    ],
+  },
+  {
+    topic:       "workflow-automation",
+    icon:        "⚙️",
+    label:       "Workflow & Automation",
+    severity:    "thin",
+    note:        "We have the major general tools but zero case studies or playbooks from orgs that have automated real work.",
+    lookingFor: [
+      "Case studies: orgs that have automated internal workflows with AI",
+      "Prompt libraries and SOP templates for common comms workflows",
+      "Zapier / Make / n8n guides for progressive orgs",
+      "AI + CRM integration guides (EveryAction, NGP, VAN)",
+    ],
+  },
+  {
+    topic:       "research-analytics",
+    icon:        "📊",
+    label:       "Research & Analytics",
+    severity:    "thin",
+    note:        "Only one accessible tool (Perplexity). Quorum is enterprise-tier. Missing audience modeling and social listening.",
+    lookingFor: [
+      "Low-cost audience modeling / social listening tools",
+      "Guide to AI-assisted polling analysis and crosstab interpretation",
+      "AI for opposition research with privacy/ethics guardrails",
+      "Open-source alternatives to enterprise research platforms",
+    ],
+  },
+  {
+    topic:       "ethics-security",
+    icon:        "🔒",
+    label:       "Ethics & Security",
+    severity:    "well-covered",
+    note:        "Strongest area in the library. Could add more practitioner-facing opsec and deepfake detection resources.",
+    lookingFor: [
+      "Opsec guide for orgs using AI tools (data handling, vendor risk)",
+      "Practitioner-facing deepfake detection resources",
+      "AI environmental impact resources for progressive vendor decisions",
+      "Labor displacement resources for union and worker orgs",
+    ],
+  },
+  {
+    topic:       "training-capacity",
+    icon:        "📚",
+    label:       "Training & Capacity",
+    severity:    "critical",
+    note:        "Only one resource in this category. Community named upskilling and governance as a top priority.",
+    lookingFor: [
+      "AI workplace policy templates for nonprofits and campaigns",
+      "Staff upskilling curricula with progressive-org context",
+      "AI governance frameworks adapted for advocacy organizations",
+      "Board/leadership briefings on AI adoption decisions",
+      "Internal champions program guide",
+    ],
+  },
+  {
+    topic:       "emerging-tech",
+    icon:        "🚀",
+    label:       "Emerging Tech",
+    severity:    "critical",
+    note:        "Zero resources despite being explicitly named in community feedback. Agentic AI and civic AI are top asks.",
+    lookingFor: [
+      "Beginner guide to agentic AI for non-technical org staff",
+      "Open source LLM options for data-sovereignty-conscious orgs",
+      "Civic AI applications: participatory democracy, petition analysis",
+      "AI agent use cases for campaigns and constituent outreach",
+      "Progressive AI labs and civic tech projects to watch",
+    ],
+  },
 ];
 
 // ============================================================
@@ -338,12 +476,58 @@ const upcomingEvents = [
 //  Rendering
 // ──────────────────────────────────────────────
 
-const LABELS = {
-  training: "Training",
-  tool:     "Tool",
-  article:  "Article",
-  org:      "Organization",
+const TOPIC_LABELS = {
+  "campaign-organizing": "Campaign & Organizing",
+  "workflow-automation": "Workflow & Automation",
+  "research-analytics":  "Research & Analytics",
+  "ethics-security":     "Ethics & Security",
+  "training-capacity":   "Training & Capacity",
+  "emerging-tech":       "Emerging Tech",
 };
+
+const TYPE_LABELS = {
+  tool:     "Tool",
+  training: "Training",
+  article:  "Article",
+  org:      "Org",
+};
+
+function renderGapMap() {
+  const container = document.getElementById("gap-map-grid");
+  if (!container) return;
+
+  // Live-count resources per topic
+  const counts = {};
+  Object.keys(TOPIC_LABELS).forEach(k => (counts[k] = 0));
+  resources.forEach(r => { if (counts[r.topic] !== undefined) counts[r.topic]++; });
+
+  gapMap.forEach(area => {
+    const count = counts[area.topic] || 0;
+    const card = document.createElement("div");
+    card.className = `gap-card gap-card--${area.severity}`;
+    card.innerHTML = `
+      <div class="gap-card-header">
+        <span class="gap-icon">${area.icon}</span>
+        <div class="gap-title-block">
+          <h3 class="gap-title">${area.label}</h3>
+          <span class="gap-count">${count} resource${count !== 1 ? "s" : ""}</span>
+        </div>
+        <span class="gap-severity gap-severity--${area.severity}">${
+          area.severity === "well-covered" ? "✓ Good coverage" :
+          area.severity === "moderate"     ? "◑ Moderate"     :
+          area.severity === "thin"         ? "⚠ Thin"         :
+                                             "✕ Gap"
+        }</span>
+      </div>
+      <p class="gap-note">${area.note}</p>
+      <ul class="gap-needs">
+        ${area.lookingFor.map(n => `<li>${n}</li>`).join("")}
+      </ul>
+      <a class="gap-suggest" href="https://github.com/kategage/AIresourcessite/issues/new?title=${encodeURIComponent("Resource suggestion: " + area.label)}" target="_blank" rel="noopener">Suggest a resource →</a>
+    `;
+    container.appendChild(card);
+  });
+}
 
 function createClaudeCodeCard(g) {
   const card = document.createElement("article");
@@ -422,13 +606,16 @@ function createEventCard(e) {
 function createCard(r) {
   const card = document.createElement("article");
   card.className = "card";
-  card.dataset.category = r.category;
-  card.dataset.searchText = `${r.title} ${r.description} ${r.tags.join(" ")}`.toLowerCase();
+  card.dataset.topic = r.topic;
+  card.dataset.searchText = `${r.title} ${r.description} ${r.tags.join(" ")} ${TOPIC_LABELS[r.topic] || ""}`.toLowerCase();
 
   card.innerHTML = `
     <div class="card-top">
       <h2 class="card-title">${r.title}</h2>
-      <span class="badge badge-${r.category}">${LABELS[r.category]}</span>
+      <div class="card-badges">
+        <span class="badge badge-topic badge-${r.topic}">${TOPIC_LABELS[r.topic]}</span>
+        <span class="badge badge-type">${TYPE_LABELS[r.type]}</span>
+      </div>
     </div>
     <p class="card-desc">${r.description}</p>
     <div class="card-tags">
@@ -452,7 +639,7 @@ function applyFilters() {
   let visibleCount = 0;
 
   cards.forEach(card => {
-    const categoryMatch = activeFilter === "all" || card.dataset.category === activeFilter;
+    const categoryMatch = activeFilter === "all" || card.dataset.topic === activeFilter;
     const searchMatch   = !searchQuery  || card.dataset.searchText.includes(searchQuery);
     const visible       = categoryMatch && searchMatch;
 
@@ -474,6 +661,9 @@ function applyFilters() {
 // ──────────────────────────────────────────────
 
 document.addEventListener("DOMContentLoaded", () => {
+
+  // ── Render gap map ──
+  renderGapMap();
 
   // ── Render Claude Code + guides ──
   const ccGrid = document.getElementById("cc-grid");
